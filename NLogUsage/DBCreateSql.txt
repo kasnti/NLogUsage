@@ -1,0 +1,21 @@
+﻿CREATE DATABASE IF NOT EXISTS `TestNLog`;
+USE `TestNLog`;
+
+-- Dumping structure for table TestNLog.TblLogrecords
+CREATE TABLE IF NOT EXISTS `TblLogrecords` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `LogDate` datetime(6) NOT NULL,
+  `LogLevel` varchar(50) NOT NULL,
+  `LogType` varchar(50) DEFAULT NULL,
+  `Logger` varchar(256) NOT NULL,
+  `Message` longtext,
+  `MachineName` varchar(50) DEFAULT NULL,
+  `MachineIp` varchar(50) DEFAULT NULL,
+  `NetRequestMethod` varchar(10) DEFAULT NULL,
+  `NetRequestUrl` varchar(500) DEFAULT NULL,
+  `NetUserIsauthenticated` varchar(10) DEFAULT NULL,
+  `NetUserAuthtype` varchar(50) DEFAULT NULL,
+  `NetUserIdentity` varchar(50) DEFAULT NULL,
+  `Exception` longtext,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
