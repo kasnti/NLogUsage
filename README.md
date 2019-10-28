@@ -1,6 +1,6 @@
-# NLogUsage
-NLog在asp.net网站中的使用，NLog日志写入数据库，NLog日志写入文件
-
+**2019/10/28, Asp.Net Core 3.0, NLog 4.6.7, NLog.Web.AspNetCore 4.9.0**  
+>摘要：NLog在asp.net网站中的使用，NLog日志写入数据库，NLog日志写入文件
+>[博文连接](https://www.cnblogs.com/kasnti/p/11748306.html)  
 实现了：  
 1.日志自动写入到数据库、写入到文件  
 2.appsettings.json数据库连接更改后，不需要去改NLog中的连接地址，启动网站或项目时自动检测变动然后去更改，以appsettings.json为准，保持同步。  
