@@ -1,4 +1,6 @@
-﻿CREATE DATABASE IF NOT EXISTS `TestNLog`;
+﻿MYSQL:
+
+CREATE DATABASE IF NOT EXISTS `TestNLog`;
 USE `TestNLog`;
 
 -- Dumping structure for table TestNLog.TblLogrecords
@@ -19,3 +21,39 @@ CREATE TABLE IF NOT EXISTS `TblLogrecords` (
   `Exception` longtext,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+MSSQL:
+先手动创建TestNLog数据库
+然后执行以下语句：
+
+USE [TestNLog]
+GO
+/****** Object:  Table [dbo].[TblLogrecords]    Script Date: 20/1/6 14:55:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TblLogrecords](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[LogDate] [datetime2](7) NOT NULL,
+	[LogLevel] [nvarchar](50) NOT NULL,
+	[LogType] [nvarchar](50) NULL,
+	[Logger] [nvarchar](256) NOT NULL,
+	[Message] [nvarchar](max) NULL,
+	[MachineName] [nvarchar](50) NULL,
+	[MachineIp] [nvarchar](50) NULL,
+	[NetRequestMethod] [nvarchar](10) NULL,
+	[NetRequestUrl] [nvarchar](500) NULL,
+	[NetUserIsauthenticated] [nvarchar](10) NULL,
+	[NetUserAuthtype] [nvarchar](50) NULL,
+	[NetUserIdentity] [nvarchar](50) NULL,
+	[Exception] [nvarchar](max) NULL,
+ CONSTRAINT [PK_SysLogrecords] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
